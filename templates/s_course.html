@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{%  static  'css/style2.css'  %}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="up_st_fee_co">
+    <h3 align="center">STUDENT FEEDBACK ON PROGRAMME</h3><br><br><br><br>
+
+    <label  style="float:center;" for="department" id="dropbox" >Choose Programme:</label>
+    <select style="float:center;" name="department" id="department">
+    <option value="BCA">BCA</option>
+    <option value="BBA">BBA</option>
+    <option value="MSW">MSW</option>
+    <option value="B.A Animation and Graphic Design">B. A Animation and Graphic Design</option>
+      <option value="Bachelor of Fashion Technology">Bachelor of Fashion Technology</option>
+      <option value="B.A Animation and Visual Effects">B. A Animation and Visual Effects</option>
+      <option value="B.A Visual Arts (Interior Design)">B. A Visual Arts (Interior Design)</option>
+      <option value="B.A Multimedia">B. A Multimedia</option>
+      <option value="M.A Graphic Design">M. A Graphic Design</option>
+      <option value="B.Com (Computer Applications)">B. Com (Computer Applications)</option>
+      <option value="B.Com (Finance and Taxation)">B. Com (Finance and Taxation)</option>
+      <option value="M.Com (Finance and Taxation)">M. Com (Finance and Taxation)</option>
+      <option value="B.Com (Marketing)">B. Com (Marketing)</option>
+  </select><br><br>
+    <input type="number" name="sem" placeholder="Enter the semester of course(numeric)"><br><br>
+    <h2>Students must rate the courses on the following attributes using the 4 -point scale shown below.</h2>
+    
+    <img id="img" width="800" src="{% static 'img/rank.png'%}"><br><br><br>
+    <h3>>Depth of the course content including project work if any</h3><br>
+
+    <input type="radio" style="" checked="checked" name="content" value="Verygood">Verygood
+    <input type="radio" name="content" value="Good">Good
+    <input type="radio" name="content" value="Satisfactory">Satisfactory
+    <input type="radio" name="content" value="Unsatisfactory">Unsatisfactory<br><br><br>
+
+    <h3>>Extent of coverage of course</h3><br>
+
+    <input type="radio" checked="checked" name="coverage" value="Verygood">Verygood
+    <input type="radio" name="coverage" value="Good">Good
+    <input type="radio" name="coverage" value="Satisfactory">Satisfactory
+    <input type="radio" name="coverage" value="Unsatisfactory">Unsatisfactory<br><br><br>
+
+
+     <h3>>Applicability/relevance to real life situations</h3><br>
+
+    <input type="radio" checked="checked" name="application" value="Verygood">Verygood
+    <input type="radio" name="application" value="Good">Good
+    <input type="radio" name="application" value="Satisfactory">Satisfactory
+    <input type="radio" name="application" value="Unsatisfactory">Unsatisfactory<br><br><br>
+
+     <h3>>Learning value (in terms of knowledge, concepts, manual skills, analytical abilities and broadening perspectives)</h3><br>
+
+    <input type="radio" checked="checked" name="value" value="Verygood">Verygood
+    <input type="radio" name="value" value="Good">Good
+    <input type="radio" name="value" value="Satisfactory">Satisfactory
+    <input type="radio" name="value" value="Unsatisfactory">Unsatisfactory<br><br><br>
+
+
+       <h3>>Clarity and relevance of textual reading material </h3><br>
+
+    <input type="radio" checked="checked" name="clarity" value="Verygood">Verygood
+    <input type="radio" name="clarity" value="Good">Good
+    <input type="radio" name="clarity" value="Satisfactory">Satisfactory
+    <input type="radio" name="clarity" value="Unsatisfactory">Unsatisfactory<br><br><br>
+
+
+                <h3>>Relevance of additional source material (Library)</h3><br>
+
+    <input type="radio" checked="checked" name="metirial" value="Verygood">Verygood
+    <input type="radio" name="metirial" value="Good">Good
+    <input type="radio" name="metirial" value="Satisfactory">Satisfactory
+    <input type="radio" name="metirial" value="Unsatisfactory">Unsatisfactory<br><br><br>
+
+
+      <h3>>Extent of effort required by students</h3><br>
+
+    <input type="radio" checked="checked" name="effort" value="Verygood">Verygood
+    <input type="radio" name="effort" value="Good">Good
+    <input type="radio" name="effort" value="Satisfactory">Satisfactory
+    <input type="radio" name="effort" value="Unsatisfactory">Unsatisfactory<br><br><br>
+
+
+                        <h3>>Overall rating</h3><br>
+
+    <input type="radio" checked="checked" name="overall" value="Verygood">Verygood
+    <input type="radio" name="overall" value="Good">Good
+    <input type="radio" name="overall" value="Satisfactory">Satisfactory
+    <input type="radio" name="overall" value="Unsatisfactory">Unsatisfactory<br><br><br>
+
+
+
+
+    <button style="width:100%; background:#2C4D95; height:35px;">SUBMIT</button>
+
+</form>
+</body>
+</html>

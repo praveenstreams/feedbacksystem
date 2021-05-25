@@ -1,0 +1,37 @@
+body {
+            background-color:#3377de;
+            font-family: Verdana;
+
+            font-size: 12px;
+}
+
+form {
+
+            background-color: #fff;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+            border: thick solid black;
+}
+
+formcontrol
+    {
+width: 600px;
+ margin: auto;
+ background:;
+
+
+        }
+
+input{
+ width: 100%;
+border: 1px solid #555;
+
+  underline: 1px;
+  outline: 1px;
+  line-height:170%;
+
+}
+
+

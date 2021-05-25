@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+{% csrf_token %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="{%  static  'css/style.css'  %}">
+    <title> Title</title>
+</head>
+<body>
+
+
+<div class="reg">
+    <div class="frm">
+
+<form action="{%url 'writestudent'%}">
+    <h6>STUDENT REGISTRATION</h6>
+            <input type="text" name="regname" placeholder="Enter full name" onkeyup="val(elem)"><br><br>
+            <input type="number" name="mob" placeholder="Mobile" onkeyup="num(this)"><br><br>
+            <input type="password" name="pass" placeholder="Password" id="pass"><br><br>
+
+            <input type="password" name="cpass" placeholder="Confirm password" id="cpass" onkeyup="check(this)">
+            <error id="alert" ></error><br>
+           <h6 id="check">hi</h6>
+
+
+            <button>REGISTER</button><br><br>
+    <br>{{txt}}<br>
+
+
+    To login <a href="stdhome">click</a>
+
+        </form>
+{% block js_block%}
+
+
+<script type="text/javascript" src="{%  static  'js/confirm.js'  %}"></script>
+
+
+{% endblock %}
+
+
+
+
+</div>
+</div>
+
+</body>
+</html>

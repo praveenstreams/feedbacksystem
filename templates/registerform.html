@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+{% csrf_token %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="{%  static  'css/style.css'  %}">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div class="reg">
+    <div class="frm">
+
+<form action="{%url 'writefaculty'%}">
+            <input type="text" name="regname" placeholder="Enter full name" onkeyup="val(elem)"><br><br>
+            <input type="number" name="mob" placeholder="Mobile" onkeyup="num(this)"><br><br>
+            <input type="password" name="pass" placeholder="Password" id="pass"><br><br>
+
+            <input type="password" name="cpass" placeholder="Confirm password" id="cpass" onkeyup="check(this)">
+            <error id="alert" ></error><br><br><br>
+           <h6 id="check">hi</h6>
+
+
+            <button>REGISTER</button><br><br>
+    <br>{{txt}}<br>
+
+
+    To login <a href="facultyhome">click</a>
+
+        </form>
+{% block js_block%}
+
+
+<script type="text/javascript" src="{%  static  'js/confirm.js'  %}"></script>
+
+
+{% endblock %}
+
+        <script type="text/javascript">
+            function passworstrength(){
+            var alert= document.getElementById('check')
+            var passwors = document.getElementById('pass');
+            var strongRegex = new RegExp("^(?=.{14,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+            var mediumRegex = new RegExp("^(?=.{10,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+            if (false == mediumRegex.test(pass.value))
+            {
+            alert.innerHTML = 'More Characters';
+            }
+
+        }
+
+
+        </script>
+
+</div>
+</div>
+
+</body>
+</html>

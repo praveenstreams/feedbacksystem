@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+{% csrf_token %}
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{%  static  'css/style2.css'  %}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{% url 'fs'%}">
+    <button  style="width:100%; background:#2C4D95; height:35px;">View your activities</button>
+
+</form>
+
+
+<form action="{% url 'mainform'%}">
+
+    <div class="formcontrol">
+        <h4 align="center">Feedback from Alumni on Programme and Teaching  </h4><br><br>
+        <input style="width:100%" type="text" name="course" placeholder="Enter Course "><br><br><br>
+
+          <label  for="department" id="dropbox" >Choose Department:</label>
+    <select name="department" id="department">
+    <option value="BCA">BCA</option>
+    <option value="BBA">BBA</option>
+    <option value="MSW">MSW</option>
+    <option value="B.A Animation and Graphic Design">B. A Animation and Graphic Design</option>
+      <option value="Bachelor of Fashion Technology">Bachelor of Fashion Technology</option>
+      <option value="B.A Animation and Visual Effects">B. A Animation and Visual Effects</option>
+      <option value="B.A Visual Arts (Interior Design)">B. A Visual Arts (Interior Design)</option>
+      <option value="B.A Multimedia">B. A Multimedia</option>
+      <option value="M.A Graphic Design">M. A Graphic Design</option>
+      <option value="B.Com (Computer Applications)">B. Com (Computer Applications)</option>
+      <option value="B.Com (Finance and Taxation)">B. Com (Finance and Taxation)</option>
+      <option value="M.Com (Finance and Taxation)">M. Com (Finance and Taxation)</option>
+      <option value="B.Com (Marketing)">B. Com (Marketing)</option>
+  </select><br><br><br>
+
+
+        <label style="float:left;font-size:15px;">>The syllabus of each course was</label><br><br>
+
+        <input style="width:5%; float:left;" value="adequate" type="checkbox" name="check" onclick="onlyOne(this)"><label style="float:left;">adequate</label>
+        <input style="width:5%;" type="checkbox" value="inadequate" name="check" onclick="onlyOne(this)"><label >inadequate</label><br>
+        <input style="width:5%; float:left;" type="checkbox" value="challenging" name="check" onclick="onlyOne(this)"><label style="float:left;">challenging</label>
+        <input style="width:5%;" type="checkbox" name="check" value="dull" onclick="onlyOne(this)"><label >dull</label><br><br><br>
+
+
+
+         <label style="float:left;font-size:15px;">>Background for benefiting from the course was  </label><br><br>
+
+        <input style="width:5%; float:left;" value="more than adequate" type="checkbox" name="check2" onclick="onlyTwo(this)"><label style="float:left;">more than adequate</label>
+        <input style="width:5%;" type="checkbox" value="adequate" name="check2" onclick="onlyTwo(this)"><label >adequate</label><br>
+        <input style="width:5%; float:left;" type="checkbox" value="inadequate" name="check2" onclick="onlyTwo(this)"><label style="float:left;">inadequate</label>
+        <input style="width:5%;" type="checkbox" name="check2" value="cannot say" onclick="onlyTwo(this)"><label >cannot say</label><br><br><br>
+
+
+        <label style="float:left;font-size:15px;">>Was the course easy or difficult to understand?    </label><br><br>
+
+        <input style="width:5%; float:left;" value="easy" type="checkbox" name="check3" onclick="onlyThree(this)"><label style="float:left;">easy</label>
+        <input style="width:5%;" type="checkbox" value="manageable" name="check3" onclick="onlyThree(this)"><label >manageable</label><br>
+        <input style="width:5%; float:left;" type="checkbox" value="difficult" name="check3" onclick="onlyThree(this)"><label style="float:left;">difficult</label>
+        <input style="width:5%;" type="checkbox" name="check3" value="very difficult" onclick="onlyThree(this)"><label >very difficult</label><br><br><br>
+
+
+        <label style="float:left;font-size:15px;">>How much of the syllabus was covered in the class?      </label><br><br>
+
+        <input style="width:5%; float:left;" value="85 to 100%" type="checkbox" name="check4" onclick="onlyFour(this)"><label style="float:left;">85 to 100%</label>
+        <input style="width:5%;" type="checkbox" value="70 to 85%" name="check4" onclick="onlyFour(this)"><label >70 to 85%</label><br>
+        <input style="width:5%; float:left;" type="checkbox" value="55 to 70%" name="check4" onclick="onlyFour(this)"><label style="float:left;">55 to 70%</label>
+        <input style="width:5%;" type="checkbox" name="check4" value="very less than 55%" onclick="onlyFour(this)"><label >less than 55%</label><br><br><br>
+
+
+        <label style="float:left; font-size:15px;">>What is your opinion about the library material and facilities for the course?</label><br><br><br><br>
+
+        <input style="width:5%; float:left;" value="more than adequate" type="checkbox" name="check5" onclick="onlyFive(this)"><label style="float:left;">more than adequate</label>
+        <input style="width:5%;" type="checkbox" value="adequate" name="check5" onclick="onlyFive(this)"><label >adequate</label><br>
+        <input style="width:5%; float:left;" type="checkbox" value="inadequate" name="check5" onclick="onlyFive(this)"><label style="float:left;">inadequate</label>
+        <input style="width:5%;" type="checkbox" name="check5" value="very poor" onclick="onlyFive(this)"><label >very poor</label><br><br><br>
+
+
+
+        <label style="float:left; font-size:15px;">>To what extent were you able to get material for the readings?</label><br><br>
+
+        <input style="width:5%; float:left;" value="Easily" type="checkbox" name="check6" onclick="onlySix(this)"><label style="float:left;">Easily</label>
+        <input style="width:5%;" type="checkbox" value="with some difficulty" name="check6" onclick="onlySix(this)"><label >with some difficulty</label><br>
+        <input style="width:5%; float:left;" type="checkbox" value="not available at all" name="check6" onclick="onlySix(this)"><label style="float:left;">not available at all</label>
+        <input style="width:5%;" type="checkbox" name="check6" value="with great difficulty" onclick="onlySix(this)"><label >with great difficulty</label><br><br><br>
+
+
+        <label style="float:left; font-size:15px;">>How well did the teacher prepare for the classes?  </label><br><br>
+
+        <input style="width:5%; float:left;" value="thoroughly" type="checkbox" name="check7" onclick="onlySeven(this)"><label style="float:left;">thoroughly</label>
+        <input style="width:5%;" type="checkbox" value="satisfactorily" name="check7" onclick="onlySeven(this)"><label >satisfactorily</label><br>
+        <input style="width:5%; float:left;" type="checkbox" value="poorly" name="check7" onclick="onlySeven(this)"><label style="float:left;">poorly</label>
+        <input style="width:5%;" type="checkbox" name="check7" value="indifferently" onclick="onlySeven(this)"><label >indifferently</label><br><br><br>
+
+
+        <label style="float:left; font-size:15px;">>How well was the teacher able to communicate? </label><br><br>
+
+        <input style="width:5%; float:left;" value="Always effective" type="checkbox" name="check8" onclick="onlyEight(this)"><label style="float:left;">Always effective</label>
+        <input style="width:5%;" type="checkbox" value="sometimes effective" name="check8" onclick="onlyEight(this)"><label >sometimes effective</label><br>
+        <input style="width:5%; float:left;" type="checkbox" value="Just satisfactorily" name="check8" onclick="onlyEight(this)"><label style="float:left;">Just satisfactorily</label>
+        <input style="width:5%;" type="checkbox" name="check8" value="generally ineffective" onclick="onlyEight(this)"><label >generally ineffective</label><br><br><br>
+
+
+        <label style="float:left; font-size:15px;">>How far the teacher encourages student participation in class?</label><br><br>
+
+        <input style="width:5%; float:left;" value="mostly yes" type="checkbox" name="check9" onclick="onlyNine(this)"><label style="float:left;">mostly yes</label>
+        <input style="width:5%;" type="checkbox" value="sometimes" name="check9" onclick="onlyNine(this)"><label >sometimes</label><br>
+        <input style="width:5%; float:left;" type="checkbox" value="not at all" name="check9" onclick="onlyNine(this)"><label style="float:left;">not at all</label>
+        <input style="width:5%;" type="checkbox" name="check9" value="always" onclick="onlyNine(this)"><label >always</label><br><br><br>
+
+
+        <label style="float:left; font-size:15px;">>If yes, which of the following methods were used?</label><br><br>
+
+        <input style="width:5%; float:left;" value="Encouraged to raise questions" type="checkbox" name="check10" onclick="onlyTen(this)"><label style="float:left;">Encouraged to raise questions</label>
+        <input style="width:5%;" type="checkbox" value="get involved in discussion in class" name="check10" onclick="onlyTen(this)"><label >get involved in discussion in class</label><br>
+        <input style="width:5%; float:left;" type="checkbox" value="encourage discussion outside class" name="check10" onclick="onlyTen(this)"><label style="float:left;">encourage discussion outside class</label>
+        <input style="width:5%;" type="checkbox" name="check10" value="did not encourage" onclick="onlyTen(this)"><label >did not encourage</label><br><br><br>
+
+
+
+        <label style="float:left; font-size:15px;">>How helpful was the teacher in advising? </label><br><br>
+
+        <input style="width:5%; float:left;" value="Very helpful" type="checkbox" name="check11" onclick="onlyEleven(this)"><label style="float:left;">Very helpful</label>
+        <input style="width:5%;" type="checkbox" value="sometimes helpful" name="check11" onclick="onlyEleven(this)"><label >sometimes helpful</label><br>
+        <input style="width:5%; float:left;" type="checkbox" value="not at all helpful" name="check11" onclick="onlyEleven(this)"><label style="float:left;">not at all helpful</label>
+        <input style="width:5%;" type="checkbox" name="check11" value="did not advise" onclick="onlyEleven(this)"><label >did not advise</label><br><br><br>
+
+
+        <label style="float:left; font-size:15px;">>The teacher’s approach can best be described as  </label><br><br>
+
+        <input style="width:5%; float:left;" value="Always courteous" type="checkbox" name="check12" onclick="onlyTwelve(this)"><label style="float:left;">Always courteous</label>
+        <input style="width:5%;" type="checkbox" value="sometimes rude" name="check12" onclick="onlyTwelve(this)"><label >sometimes rude</label><br>
+        <input style="width:5%; float:left;" type="checkbox" value="always indifferent" name="check12" onclick="onlyTwelve(this)"><label style="float:left;">always indifferent</label>
+        <input style="width:5%;" type="checkbox" name="check12" value="cannot say" onclick="onlyTwelve(this)"><label >cannot say</label><br><br><br>
+
+
+        <label style="float:left; font-size:15px;">>Internal assessment was </label><br><br>
+
+        <input style="width:5%; float:left;" value="Always fair" type="checkbox" name="check13" onclick="onlyThirteen(this)"><label style="float:left;">Always fair</label>
+        <input style="width:5%;" type="checkbox" value="sometimes unfair" name="check13" onclick="onlyThirteen(this)"><label >sometimes unfair</label><br>
+        <input style="width:5%; float:left;" type="checkbox" value="Usually unfair" name="check13" onclick="onlyThirteen(this)"><label style="float:left;">Usually unfair</label>
+        <input style="width:5%;" type="checkbox" name="check13" value="sometimes fair" onclick="onlyThirteen(this)"><label >sometimes fair</label><br><br><br>
+
+
+
+        <label style="float:left; font-size:15px;">>What effect do you think the internal assessment will have on your course grade?</label><br><br><br><br>
+
+        <input style="width:5%; float:left;" value="Helps to  improve" type="checkbox" name="check14" onclick="onlyFourteen(this)"><label style="float:left;">Helps to  improve</label>
+        <input style="width:5%;" type="checkbox" value="discouraging" name="check14" onclick="onlyFourteen(this)"><label >discouraging</label><br>
+        <input style="width:5%; float:left;" type="checkbox" value="no special effect" name="check14" onclick="onlyFourteen(this)"><label style="float:left;">no special effect</label>
+        <input style="width:5%;" type="checkbox" name="check14" value="sometimes effective" onclick="onlyFourteen(this)"><label >sometimes effective</label><br><br><br>
+
+
+        <label style="float:left; font-size:15px;">>How often did the teacher provide feedback on your performance?</label><br><br><br><br>
+
+        <input style="width:5%; float:left;" value="Regularly/in time" type="checkbox" name="check15" onclick="onlyFifteen(this)"><label style="float:left;">Regularly/in time</label>
+        <input style="width:5%;" type="checkbox" value="with helpful comment" name="check15" onclick="onlyFifteen(this)"><label >with helpful comment</label><br>
+        <input style="width:5%; float:left;" type="checkbox" value="often/ late" name="check15" onclick="onlyFifteen(this)"><label style="float:left;">often/ late</label>
+        <input style="width:5%;" type="checkbox" name="check15" value="without any comments" onclick="onlyFifteen(this)"><label >without any comments</label><br><br><br>
+
+
+        <label style="float:left; font-size:15px;">>Were your assignments discussed with you? </label><br><br><br><br>
+
+        <input style="width:5%; float:left;" value="Yes, fully" type="checkbox" name="check16" onclick="onlySixteen(this)"><label style="float:left;">Yes, fully</label>
+        <input style="width:5%;" type="checkbox" value="yes, partly" name="check16" onclick="onlySixteen(this)"><label >yes, partly</label><br>
+        <input style="width:5%; float:left;" type="checkbox" value="not discussed at all" name="check16" onclick="onlySixteen(this)"><label style="float:left;">not discussed at all</label>
+        <input style="width:5%;" type="checkbox" name="check16" value="sometimes discussed" onclick="onlySixteen(this)"><label >sometimes discussed</label><br><br><br>
+
+        <label style="float:left; font-size:15px;">>Were you provided with a course contributory lecture too at the beginning? </label><br><br><br><br>
+
+        <input style="width:5%;" type="checkbox" value="yes" name="check17" onclick="onlySeventeen(this)"><label >Yes</label>
+        <input style="width:5%; float:left;" type="checkbox" value="no" name="check17" onclick="onlySeventeen(this)"><label style="float:left;">No</label><br><br>
+
+        <button style="width:100%; background:#2C4D95; height:35px;">SUBMIT</button>
+
+
+
+    </div>
+
+</form>
+
+
+{% block js_block%}
+
+
+<script type="text/javascript" src="{%  static  'js/confirm.js'  %}"></script>
+
+
+{% endblock %}
+
+</body>
+</html>

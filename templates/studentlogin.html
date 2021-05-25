@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+     <link rel="stylesheet" href="{%  static  'css/style.css'  %}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="reg">
+    <div class="frm">
+        <form action="{%url 'slogin'%}">
+            <h6>STUDENTS SECTION</h6>
+            <input type="number" name="num" placeholder="Number"><br><br>
+            <input type="password" name="password" placeholder="Password"><br><br>
+            <button>LOGIN</button><br><br>
+            <br>{{txt}}<br>
+            If not registered <a href="stdreg">click</a>
+        </form>
+
+
+
+    </div>
+
+</div>
+
+<script src=https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>
